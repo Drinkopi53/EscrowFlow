@@ -1,138 +1,125 @@
-# Baby-Step 1: Melakukan Setup Proyek Hardhat dan Instalasi Dependensi Awal
+# Baby-Step: Inisialisasi Proyek Hardhat untuk Pengembangan Smart Contract
 
-Ini adalah langkah pertama yang krusial untuk menyiapkan lingkungan pengembangan smart contract Anda. Ikuti instruksi ini dengan cermat.
+## Deskripsi Tugas
+Tugas ini bertujuan untuk menyiapkan lingkungan pengembangan dasar untuk smart contract menggunakan Hardhat. Ini melibatkan inisialisasi proyek Node.js, instalasi Hardhat dan dependensi yang diperlukan, serta konfigurasi Hardhat untuk berinteraksi dengan jaringan Polygon Mumbai Testnet. Langkah ini sangat penting sebagai fondasi sebelum kita mulai menulis kode Solidity untuk smart contract.
 
-## Tujuan
-Menyiapkan direktori proyek, menginstal Hardhat, dan menginstal dependensi Node.js/npm yang diperlukan untuk pengembangan smart contract di Polygon.
+## Tujuan dalam Konteks Smart Contract
+Dengan menyelesaikan langkah ini, kita akan memiliki struktur proyek yang siap untuk pengembangan, kompilasi, pengujian, dan deployment smart contract. Ini memastikan bahwa semua alat yang diperlukan tersedia dan dikonfigurasi dengan benar, meminimalkan hambatan di kemudian hari.
 
 ## File yang Akan Dibuat/Dimodifikasi
-*   Direktori proyek baru (misal: `EscrowFlow`)
-*   `package.json` (dibuat oleh `npm init`)
-*   `hardhat.config.js` (dibuat oleh `npx hardhat`, lalu dimodifikasi)
-*   `.env` (baru)
-*   `.gitignore` (baru)
-*   `contracts/` (direktori, dibuat oleh `npx hardhat`)
-*   `scripts/` (direktori, dibuat oleh `npx hardhat`)
-*   `test/` (direktori, dibuat oleh `npx hardhat`)
 
-## Instruksi Langkah demi Langkah
+*   **Direktori Proyek Baru:** Disarankan untuk membuat direktori baru untuk proyek Hardhat, misalnya `contracts/hardhat-project`. Semua file dan folder Hardhat akan berada di dalam direktori ini.
+*   `contracts/hardhat-project/package.json`: File konfigurasi Node.js yang akan mencatat dependensi proyek.
+*   `contracts/hardhat-project/hardhat.config.js` (atau `.ts`): File konfigurasi utama Hardhat, di mana kita akan menentukan jaringan, compiler Solidity, dan pengaturan lainnya.
+*   `contracts/hardhat-project/contracts/`: Direktori untuk menyimpan file Solidity (`.sol`).
+*   `contracts/hardhat-project/scripts/`: Direktori untuk menyimpan skrip deployment atau interaksi kontrak.
+*   `contracts/hardhat-project/test/`: Direktori untuk menyimpan unit test smart contract.
 
-### Langkah 1: Instalasi Node.js dan Verifikasi npm/Yarn
-Jika Anda belum memiliki Node.js, instal terlebih dahulu.
+## Instruksi Langkah demi Langkah (untuk Junior Developer)
 
-1.  **Unduh Node.js:** Kunjungi situs resmi Node.js: [https://nodejs.org/](https://nodejs.org/). Unduh dan instal versi LTS (Long Term Support) yang direkomendasikan untuk sistem operasi Anda. npm (Node Package Manager) akan terinstal secara otomatis bersama Node.js.
-2.  **Verifikasi Instalasi:** Buka terminal atau Command Prompt baru dan jalankan perintah berikut untuk memastikan Node.js dan npm terinstal dengan benar:
-    ```bash
-    node -v
-    npm -v
-    ```
-    Anda akan melihat nomor versi untuk Node.js dan npm.
-3.  **(Opsional) Instal Yarn:** Jika Anda lebih suka menggunakan Yarn sebagai package manager, instal secara global:
-    ```bash
-    npm install -g yarn
-    ```
-    Verifikasi instalasi Yarn:
-    ```bash
-    yarn -v
-    ```
+1.  **Buat Direktori Proyek Hardhat:**
+    *   Buka terminal di root proyek Anda (`d:/Games/MyProject/EscrowFlow/EscrowFlow`).
+    *   Buat direktori baru untuk proyek Hardhat Anda.
+        ```bash
+        mkdir contracts
+        mkdir contracts/hardhat-project
+        ```
+    *   Masuk ke direktori proyek Hardhat yang baru dibuat.
+        ```bash
+        cd contracts/hardhat-project
+        ```
 
-### Langkah 2: Membuat Direktori Proyek dan Inisialisasi npm
-Kita akan membuat direktori utama untuk proyek Anda dan menginisialisasi proyek Node.js di dalamnya.
+2.  **Inisialisasi Proyek Node.js:**
+    *   Di dalam direktori `contracts/hardhat-project`, inisialisasi proyek Node.js.
+        ```bash
+        npm init -y
+        ```
+        Ini akan membuat file `package.json` dengan pengaturan default.
 
-1.  **Buat Direktori Proyek:** Di lokasi yang Anda inginkan (misal: `d:/Games/MyProject/EscrowFlow`), buat direktori baru.
-    ```bash
-    mkdir EscrowFlow
-    ```
-2.  **Masuk ke Direktori Proyek:**
-    ```bash
-    cd EscrowFlow
-    ```
-3.  **Inisialisasi Proyek npm:** Ini akan membuat file `package.json` yang akan melacak semua dependensi proyek Anda.
-    ```bash
-    npm init -y
-    ```
-    Opsi `-y` akan menerima semua nilai default, sehingga prosesnya lebih cepat.
+3.  **Instal Hardhat dan Dependensi Penting:**
+    *   Instal Hardhat sebagai dependensi pengembangan.
+        ```bash
+        npm install --save-dev hardhat
+        ```
+    *   Instal dependensi tambahan yang diperlukan untuk Hardhat dan interaksi blockchain.
+        ```bash
+        npm install --save-dev @nomicfoundation/hardhat-toolbox @nomiclabs/hardhat-ethers ethers dotenv
+        ```
+        *   `@nomicfoundation/hardhat-toolbox`: Kumpulan plugin Hardhat yang direkomendasikan (termasuk testing, deployment, dll.).
+        *   `@nomiclabs/hardhat-ethers`: Integrasi Ethers.js dengan Hardhat.
+        *   `ethers`: Library untuk berinteraksi dengan Ethereum blockchain.
+        *   `dotenv`: Untuk mengelola variabel lingkungan (misalnya, kunci API, private key).
 
-### Langkah 3: Instalasi Hardhat
-Hardhat adalah framework pengembangan smart contract yang akan kita gunakan.
+4.  **Inisialisasi Proyek Hardhat:**
+    *   Jalankan perintah inisialisasi Hardhat.
+        ```bash
+        npx hardhat
+        ```
+    *   Pilih opsi `Create a JavaScript project` (atau TypeScript jika Anda lebih suka, tetapi instruksi ini akan menggunakan JavaScript).
+    *   Tekan `Enter` untuk menerima lokasi default untuk `hardhat.config.js`.
+    *   Tekan `Enter` untuk menerima lokasi default untuk `contracts/` dan `test/`.
+    *   Tekan `Enter` untuk menambahkan `.gitignore` secara otomatis.
 
-1.  **Instal Hardhat:** Di dalam direktori `EscrowFlow`, instal Hardhat sebagai dependensi pengembangan:
-    ```bash
-    npm install --save-dev hardhat
-    ```
+5.  **Konfigurasi Hardhat untuk Polygon Mumbai Testnet:**
+    *   Buka file `contracts/hardhat-project/hardhat.config.js` (atau `.ts`) di editor teks Anda.
+    *   Modifikasi file tersebut untuk menyertakan konfigurasi jaringan Polygon Mumbai dan mengelola variabel lingkungan.
 
-### Langkah 4: Inisialisasi Proyek Hardhat
-Ini akan membuat struktur folder dasar Hardhat dan file konfigurasi.
-
-1.  **Jalankan Inisialisasi Hardhat:** Di dalam direktori `EscrowFlow`, jalankan perintah berikut:
-    ```bash
-    npx hardhat
-    ```
-2.  **Pilih Opsi:** Anda akan diberikan beberapa opsi. Pilih `Create a JavaScript project`. Hardhat akan membuat file `hardhat.config.js` dan direktori seperti `contracts/`, `scripts/`, dan `test/`.
-
-### Langkah 5: Instalasi Dependensi Hardhat Tambahan
-Kita akan menginstal library dan plugin penting untuk pengembangan dan pengujian.
-
-1.  **Instal Dependensi:** Di dalam direktori `EscrowFlow`, jalankan perintah berikut:
-    ```bash
-    npm install --save-dev @openzeppelin/contracts @nomiclabs/hardhat-waffle ethereum-waffle chai dotenv
-    ```
-    *   `@openzeppelin/contracts`: Menyediakan implementasi standar yang aman untuk smart contract (misal: ERC20, Ownable).
-    *   `@nomiclabs/hardhat-waffle`: Integrasi Hardhat dengan Waffle untuk pengujian.
-    *   `ethereum-waffle`: Library pengujian untuk Ethereum.
-    *   `chai`: Library assertion untuk pengujian.
-    *   `dotenv`: Untuk memuat variabel lingkungan dari file `.env`.
-
-### Langkah 6: Konfigurasi Variabel Lingkungan (`.env`)
-Untuk keamanan, kita akan menyimpan kunci pribadi dan informasi sensitif lainnya di file `.env`.
-
-1.  **Buat File `.env`:** Di root direktori `EscrowFlow`, buat file baru bernama `.env`.
-2.  **Tambahkan Kunci Pribadi:** Buka file `.env` dan tambahkan baris berikut. Ganti `your_private_key_here` dengan kunci pribadi akun MetaMask Anda yang akan digunakan untuk deployment (pastikan akun ini memiliki dana MATIC di Polygon Mumbai Testnet).
-    ```
-    PRIVATE_KEY="your_private_key_here"
-    ```
-    **PENTING:** Jangan pernah meng-commit file `.env` ke repositori publik Anda!
-3.  **Buat File `.gitignore`:** Di root direktori `EscrowFlow`, buat file baru bernama `.gitignore`.
-4.  **Tambahkan Entri ke `.gitignore`:** Buka file `.gitignore` dan tambahkan baris berikut untuk mengabaikan file dan folder yang tidak perlu di-commit:
-    ```
-    node_modules/
-    .env
-    artifacts/
-    cache/
-    ```
-
-### Langkah 7: Konfigurasi Jaringan Polygon Mumbai Testnet di Hardhat (`hardhat.config.js`)
-Kita akan mengedit file konfigurasi Hardhat untuk menghubungkannya ke jaringan Polygon Mumbai Testnet.
-
-1.  **Buka `hardhat.config.js`:** File ini berada di root direktori `EscrowFlow`.
-2.  **Modifikasi Konten:** Ganti konten `hardhat.config.js` dengan yang berikut ini. Pastikan versi `solidity` sesuai dengan yang Anda inginkan (misal: `0.8.20`).
     ```javascript
-    require("@nomiclabs/hardhat-waffle");
-    require('dotenv').config(); // Memuat variabel lingkungan dari .env
+    require("@nomicfoundation/hardhat-toolbox");
+    require("dotenv").config();
 
     const PRIVATE_KEY = process.env.PRIVATE_KEY;
+    const MUMBAI_RPC_URL = process.env.MUMBAI_RPC_URL;
 
+    /** @type import('hardhat/config').HardhatUserConfig */
     module.exports = {
-      solidity: "0.8.20", // Sesuaikan dengan versi Solidity yang akan digunakan
+      solidity: "0.8.24", // Pastikan versi Solidity sesuai dengan yang Anda gunakan
       networks: {
         mumbai: {
-          url: "https://rpc-mumbai.maticvigil.com/",
-          accounts: [`0x${PRIVATE_KEY}`] // Pastikan private key diawali dengan 0x
-        }
-      }
+          url: MUMBAI_RPC_URL,
+          accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+          chainId: 80001, // Chain ID untuk Polygon Mumbai Testnet
+        },
+      },
+      paths: {
+        sources: "./contracts",
+        tests: "./test",
+        cache: "./cache",
+        artifacts: "./artifacts"
+      },
     };
     ```
 
-## Kriteria Penerimaan / Validasi Keberhasilan
-Setelah menyelesaikan semua langkah di atas, Anda dapat memvalidasi keberhasilan setup dengan:
+6.  **Buat File `.env`:**
+    *   Di dalam direktori `contracts/hardhat-project`, buat file baru bernama `.env`.
+    *   Tambahkan variabel lingkungan berikut ke file `.env`. Anda perlu mengganti placeholder dengan nilai sebenarnya.
+        ```
+        PRIVATE_KEY="YOUR_METAMASK_PRIVATE_KEY_HERE"
+        MUMBAI_RPC_URL="YOUR_ALCHEMY_OR_INFURA_MUMBAI_RPC_URL_HERE"
+        ```
+        *   **Penting:** Jangan pernah membagikan `PRIVATE_KEY` Anda. Untuk tujuan pengembangan, gunakan akun testnet dengan dana minimal. Anda bisa mendapatkan RPC URL dari layanan seperti Alchemy atau Infura.
 
-*   **Verifikasi Instalasi Node.js/npm/Yarn:** Perintah `node -v`, `npm -v`, dan `yarn -v` (jika diinstal) harus menampilkan nomor versi tanpa error.
-*   **Verifikasi Instalasi Hardhat:** Perintah `npx hardhat` harus menampilkan daftar perintah Hardhat yang tersedia.
-*   **Verifikasi Konfigurasi Hardhat:** Anda dapat mencoba mengkompilasi kontrak contoh yang dibuat oleh Hardhat secara default (biasanya `contracts/Greeter.sol`).
-    ```bash
-    npx hardhat compile
-    ```
-    Perintah ini harus berjalan tanpa error dan menghasilkan folder `artifacts/` dan `cache/`. Jika ini berhasil, berarti Hardhat dan dependensinya terinstal dan terkonfigurasi dengan benar untuk kompilasi.
-*   **Verifikasi Koneksi Jaringan (Opsional, setelah kontrak pertama dibuat):** Setelah Anda memiliki kontrak sederhana dan skrip deployment, Anda dapat mencoba men-deploy-nya ke Mumbai Testnet untuk memverifikasi bahwa konfigurasi jaringan di `hardhat.config.js` berfungsi. Ini akan menjadi bagian dari baby-step berikutnya.
+## Kriteria Penerimaan dan Cara Melakukan Tes/Validasi
 
-Setelah semua langkah ini selesai dan kriteria penerimaan terpenuhi, Anda siap untuk baby-step selanjutnya: memulai pengembangan smart contract itu sendiri.
+1.  **Verifikasi Struktur Proyek:**
+    *   Pastikan direktori `contracts/hardhat-project` telah dibuat.
+    *   Di dalamnya, harus ada `package.json`, `hardhat.config.js`, `node_modules/`, `contracts/`, `scripts/`, dan `test/`.
+    *   Pastikan file `.env` juga ada di `contracts/hardhat-project`.
+
+2.  **Kompilasi Hardhat Berhasil:**
+    *   Buka terminal di direktori `contracts/hardhat-project`.
+    *   Jalankan perintah:
+        ```bash
+        npx hardhat compile
+        ```
+    *   Perintah ini harus berjalan tanpa error dan menghasilkan direktori `artifacts/` dan `cache/`. Ini menunjukkan bahwa Hardhat dapat mengkompilasi kontrak contoh default yang dibuat saat inisialisasi.
+
+3.  **Hardhat Test Runner Berhasil:**
+    *   Buka terminal di direktori `contracts/hardhat-project`.
+    *   Jalankan perintah:
+        ```bash
+        npx hardhat test
+        ```
+    *   Perintah ini harus berjalan tanpa error. Meskipun belum ada tes kustom yang ditulis, Hardhat harus dapat menjalankan test runner-nya tanpa masalah framework. Ini memverifikasi bahwa lingkungan pengujian telah diatur dengan benar.
+
+Setelah semua langkah ini berhasil diselesaikan, proyek Hardhat Anda akan siap untuk mulai menulis smart contract pertama Anda.
