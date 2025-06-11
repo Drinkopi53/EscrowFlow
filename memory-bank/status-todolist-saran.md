@@ -1,34 +1,28 @@
-# Status Proyek dan To-Do List
+# Status Proyek, To-Do List, dan Saran
 
 ## Status Proyek Saat Ini
-Saat ini, kita telah menyelesaikan fase perencanaan detail untuk setup environment proyek 'Performance-Triggered Smart Contract with Escrowed Bonus Payouts'. Rencana ini mencakup instalasi tools (Node.js, Hardhat, MetaMask), konfigurasi awal Hardhat untuk Polygon Mumbai Testnet, dan rekomendasi struktur folder kode. Belum ada implementasi kode yang dimulai.
+Kita akan memulai implementasi fitur utama untuk smart contract: mendefinisikan struktur kontrak dan fungsi escrow awal berdasarkan `rencana-implementasi.md`. Dokumen desain produk dan rencana implementasi awal telah selesai, serta tumpukan teknologi telah direkomendasikan. Belum ada codebase yang ada, sehingga langkah selanjutnya adalah menyiapkan lingkungan pengembangan.
 
 ## Daftar Pekerjaan (To-Do List) Prioritas Tinggi untuk Masa Depan
 
-Berdasarkan `rencana-implementasi.markdown`, berikut adalah daftar pekerjaan prioritas tinggi:
-
 1.  **Pengembangan Smart Contract:**
-    *   Membangun kontrak Solidity dengan fungsi deposit bonus ke escrow.
-    *   Mengimplementasikan fungsi verifikasi performa (jumlah commit GitHub) melalui Chainlink.
-    *   Mengembangkan fungsi payout otomatis dan pengembalian dana.
-    *   Menulis unit test komprehensif untuk semua fungsi smart contract.
-
-2.  **Integrasi Oracle (Chainlink & GitHub API):**
-    *   Membuat dan mengimplementasikan Chainlink External Adapter untuk mengambil data commit dari GitHub API.
-    *   Mengatur webhook di GitHub untuk memicu pembaruan data.
-
-3.  **Pengembangan Frontend (React.js):**
-    *   Membangun antarmuka pengguna untuk manajer (pembuatan kontrak, deposit bonus).
-    *   Membangun antarmuka pengguna untuk pekerja (melihat status performa, klaim bonus).
-    *   Mengintegrasikan MetaMask untuk interaksi dompet.
-
+    *   Setup proyek Hardhat untuk Polygon.
+    *   Konstruksi Smart Contract (Solidity): fungsi untuk deposit bonus ke escrow, Chainlink API call untuk verifikasi commit, pembayaran otomatis/pengembalian dana.
+    *   Unit Testing untuk fungsi smart contract.
+2.  **Integrasi API GitHub:**
+    *   Membuat Chainlink External Adapter untuk GitHub API.
+    *   Mengatur webhook GitHub.
+    *   Mengimplementasikan verifikasi data di smart contract.
+3.  **Frontend dan Integrasi Wallet:**
+    *   Mengembangkan UI aplikasi React.
+    *   Mengintegrasikan MetaMask.
 4.  **Deployment:**
-    *   Mendeploy smart contract ke Polygon Mumbai Testnet.
-    *   Mendeploy aplikasi frontend.
-    *   Mendeploy backend/Chainlink node.
+    *   Deploy Smart Contract ke Polygon Testnet (Mumbai).
+    *   Deploy Frontend.
+    *   Host Backend/Chainlink Node.
 
-## Saran "Baby-Step To-Do List" Berikutnya
+## Saran "Baby-Step To-Do List" untuk Langkah Implementasi Berikutnya
 
-**Baby-Step 1: Melakukan Setup Proyek Hardhat dan Instalasi Dependensi Awal**
+**Baby-Step: Inisialisasi Proyek Hardhat untuk Pengembangan Smart Contract**
 
-Ini adalah langkah fundamental untuk menyiapkan lingkungan pengembangan smart contract Anda.
+Ini adalah unit pekerjaan kecil yang logis dan dapat diuji untuk memulai pengembangan smart contract. Langkah ini akan menyiapkan lingkungan dasar yang diperlukan sebelum menulis kode Solidity.
