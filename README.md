@@ -14,7 +14,7 @@ This project implements a blockchain-based system to automate bonus payouts for 
 - **Oracle:** Chainlink for GitHub API integration
 - **Frontend:** React.js, Tailwind CSS, MetaMask
 - **Backend:**.js for API middleware
--
+  
 ## Installation (MVP Placeholder)
 1. Clone the repository:
    ```bash
