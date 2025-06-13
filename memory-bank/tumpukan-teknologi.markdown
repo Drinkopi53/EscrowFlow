@@ -1,34 +1,34 @@
 # Rekomendasi Tumpukan Teknologi
 
 ## 1. Blockchain
-- **Pilihan Utama: Polygon**
+- **Rekomendasi Utama: Polygon**
   - **Alasan:** Biaya transaksi rendah (layer-2 Ethereum), kompatibel dengan Ethereum Virtual Machine (EVM), ekosistem yang matang, dan mendukung skalabilitas untuk transaksi kecil seperti bonus.
-  - **Alternatif:**
+  - **Alternatif (jika diperlukan):**
     - **Ethereum:** Cocok untuk keamanan tinggi, tetapi biaya gas mahal untuk transaksi kecil.
     - **BNB Chain:** Biaya rendah, cepat, tetapi kurang terdesentralisasi.
     - **Solana:** Performa tinggi, tetapi ekosistem smart contract kurang matang dibandingkan EVM.
 - **Pertimbangan:** Polygon dipilih untuk MVP karena keseimbangan antara biaya, kompatibilitas, dan kemudahan pengembangan.
 
 ## 2. Bahasa Pemrograman Smart Contract
-- **Solidity**
+- **Rekomendasi Utama: Solidity**
   - **Alasan:** Bahasa standar untuk EVM, didukung luas oleh komunitas dan alat pengembangan seperti Hardhat dan Truffle.
-  - **Alternatif:** Vyper (lebih sederhana, aman, tapi kurang fleksibel).
+  - **Alternatif (jika diperlukan):** Vyper (lebih sederhana, aman, tapi kurang fleksibel).
 
 ## 3. Framework Pengembangan
-- **Hardhat**
+- **Rekomendasi Utama: Hardhat**
   - **Alasan:** Alat pengembangan modern, mendukung debugging, testing, dan deployment smart contract dengan cepat. Plugin ekosistemnya kuat untuk integrasi Polygon.
-  - **Alternatif:** Truffle (lebih tradisional, cocok untuk proyek sederhana).
+  - **Alternatif (jika diperlukan):** Truffle (lebih tradisional, cocok untuk proyek sederhana).
 - **OpenZeppelin**
   - **Alasan:** Menyediakan kontrak standar seperti ERC20 untuk token bonus dan modul escrow yang aman dan teruji.
 
 ## 4. Layanan Oracle
-- **Chainlink**
-  - **Alasan:** Mendukung integrasi data eksternal (API GitHub/Trello) melalui Chainlink Any-API dan External Adapters. Terdesentralisasi dan andal.
-  - **Alternatif:** Band Protocol (lebih murah, tapi kurang populer).
+- **Rekomendasi Utama: Chainlink**
+  - **Alasan:** Mendukung integrasi data eksternal (API GitHub) melalui Chainlink Any-API dan External Adapters. Terdesentralisasi dan andal.
+  - **Alternatif (jika diperlukan):** Band Protocol (lebih murah, tapi kurang populer).
 
 ## 5. Integrasi API
-- **GitHub API:** Untuk melacak jumlah commit, status pull request, atau aktivitas repositori.
-- **Trello/Jira API:** Untuk memantau status task (misal, kartu di kolom “Done”) atau penyelesaian milestone.
+- **GitHub API:** Untuk melacak jumlah commit, status pull request, dan aktivitas repositori.
+- **Trello API dan Jira API:** Untuk memantau status task (misal, kartu di kolom “Done”) dan penyelesaian milestone.
 - **Implementasi:** Menggunakan Chainlink untuk menghubungkan smart contract dengan API eksternal via Webhook atau HTTP request.
 
 ## 6. Frontend dan Infrastruktur

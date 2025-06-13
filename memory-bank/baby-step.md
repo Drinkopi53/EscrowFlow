@@ -10,7 +10,7 @@ Dengan menyelesaikan langkah ini, kita akan memiliki struktur proyek yang siap u
 
 *   **Direktori Proyek Baru:** Disarankan untuk membuat direktori baru untuk proyek Hardhat, misalnya `contracts/hardhat-project`. Semua file dan folder Hardhat akan berada di dalam direktori ini.
 *   `contracts/hardhat-project/package.json`: File konfigurasi Node.js yang akan mencatat dependensi proyek.
-*   `contracts/hardhat-project/hardhat.config.js` (atau `.ts`): File konfigurasi utama Hardhat, di mana kita akan menentukan jaringan, compiler Solidity, dan pengaturan lainnya.
+*   `contracts/hardhat-project/hardhat.config.js` dan `contracts/hardhat-project/hardhat.config.ts`: File konfigurasi utama Hardhat, di mana kita akan menentukan jaringan, compiler Solidity, dan pengaturan lainnya.
 *   `contracts/hardhat-project/contracts/`: Direktori untuk menyimpan file Solidity (`.sol`).
 *   `contracts/hardhat-project/scripts/`: Direktori untuk menyimpan skrip deployment atau interaksi kontrak.
 *   `contracts/hardhat-project/test/`: Direktori untuk menyimpan unit test smart contract.

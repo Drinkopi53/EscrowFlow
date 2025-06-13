@@ -10,7 +10,7 @@ Membangun sistem berbasis blockchain yang transparan dan otomatis untuk mengelol
 
 ## 3. Fitur Inti
 ### 3.1 Pemantauan Performa Otomatis
-- **Deskripsi:** Smart contract memantau indikator kinerja (KPI) seperti jumlah commit di GitHub, status task di Trello/Jira, atau penyelesaian milestone melalui integrasi API/Webhook.
+- **Deskripsi:** Smart contract memantau indikator kinerja (KPI) seperti jumlah commit di GitHub. Untuk status task dan penyelesaian milestone, sistem menggunakan API Trello dan API Jira secara terpisah melalui integrasi API/Webhook.
 - **Contoh:** Memverifikasi apakah seorang developer telah melakukan minimal 10 commit ke repositori tertentu dalam 7 hari.
 - **Manfaat:** Mengurangi ketergantungan pada pelaporan manual dan meningkatkan objektivitas.
 
