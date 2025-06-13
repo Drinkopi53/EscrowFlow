@@ -1,7 +1,7 @@
 # Status Proyek, To-Do List, dan Saran
 
 ## Status Proyek Saat Ini
-Kita akan memulai implementasi fitur utama untuk smart contract: mendefinisikan struktur kontrak dan fungsi escrow awal berdasarkan `rencana-implementasi.md`. Dokumen desain produk dan rencana implementasi awal telah selesai, serta tumpukan teknologi telah direkomendasikan. Belum ada codebase yang ada, sehingga langkah selanjutnya adalah menyiapkan lingkungan pengembangan.
+Kita akan memulai implementasi fitur utama untuk smart contract: mendefinisikan struktur kontrak dan fungsi escrow awal berdasarkan `rencana-implementasi.markdown`. Dokumen desain produk dan rencana implementasi awal telah selesai, serta tumpukan teknologi telah direkomendasikan. Belum ada codebase yang ada, sehingga langkah selanjutnya adalah menyiapkan lingkungan pengembangan.
 
 ## Daftar Pekerjaan (To-Do List) Prioritas Tinggi untuk Masa Depan
 
