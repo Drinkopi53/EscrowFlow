@@ -1,0 +1,27 @@
+{
+  "name": "escrowflow",
+  "version": "1.0.0",
+  "description": "Proyek ini bertujuan untuk membangun sistem terdesentralisasi yang meningkatkan kepercayaan dan efisiensi dalam kolaborasi tim remote. Dengan memanfaatkan smart contract di blockchain, proyek ini akan secara otomatis memverifikasi kontribusi individu berdasarkan metrik kinerja yang terukur (misalnya, jumlah commit GitHub) dan mencairkan bonus yang telah dikunci dalam escrow jika target tercapai. Ini mengatasi masalah umum seperti kurangnya transparansi, keterlambatan pembayaran bonus, dan ketidakadilan dalam penilaian performa di lingkungan kerja jarak jauh.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drinkopi53/EscrowFlow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Drinkopi53/EscrowFlow/issues"
+  },
+  "homepage": "https://github.com/Drinkopi53/EscrowFlow#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.3.0",
+    "dotenv": "^16.5.0",
+    "hardhat": "^2.24.3"
+  }
+}
