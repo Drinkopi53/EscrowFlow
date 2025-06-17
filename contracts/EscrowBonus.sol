@@ -3,8 +3,10 @@ pragma solidity ^0.8.24; // Sesuaikan dengan versi di hardhat.config.js
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
+import "@chainlink/contracts/src/v0.8/Chainlink.sol"; // Explicit import
 
 contract EscrowBonus is Ownable, ChainlinkClient {
+    using Chainlink for Chainlink.Request; // Explicit using statement
 
     // State variables
     struct BonusContract {
